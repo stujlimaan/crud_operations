@@ -3,8 +3,8 @@
 
 ### required packages
       `npm create-react-app . 
-       npm i axios react-redux redux redux-logger   @material-ui/core 
-        npm install react-router-dom`
+       npm i axios react-redux redux redux-logger @material-ui/core 
+       npm install react-router-dom`
 
 ### run the server 
     ` npm start
