@@ -38,7 +38,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 function Home() {
   const dispatch = useDispatch();
-  let history = useNavigate()
+  let navigate = useNavigate()
   useEffect(() => {
     dispatch(loadUsers());
   }, []);
@@ -53,7 +53,7 @@ function Home() {
 
   return (
     <div>
-    <Button variant="contained" color="primary">ADD USER</Button>
+    <Button variant="contained" color="primary" onClick={()=>navigate("/addUser")}>ADD USER</Button>
     <br></br>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -78,7 +78,7 @@ function Home() {
                 <StyledTableCell align="center">{user.address}</StyledTableCell>
                 <StyledTableCell align="center">
                   <ButtonGroup variant="text" aria-label="text button group">
-                    <Button color="primary">edit</Button>
+                    <Button color="primary" onClick={()=>navigate(`/editUser/${user.id}`)}>edit</Button>
                     <Button color="secondary" onClick={()=>handleDelete(user.id)}>delete</Button>
                   </ButtonGroup>
                 </StyledTableCell>
